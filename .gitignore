@@ -1,0 +1,12 @@
+# dbt build artifacts
+target/
+dbt_modules/
+
+# Sensitive files
+profiles.yml
+
+# Python virtual environments
+venv/
+.env/
+
+# VS Code settings
