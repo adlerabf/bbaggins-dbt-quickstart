@@ -1,0 +1,36 @@
+version: 2
+
+models:
+    - name: stg_stripe__payments
+      description: one unique payment per row
+      columns:
+        - name: payment_id
+          description: primary key
+          data_tests:
+            - unique
+            - not_null        
+        - name: order_id
+          description: foreign key to orders table
+          data_tests:
+            - not_null
+        - name: status
+          description: if the payment was successful or failed
+          data_tests:
+            - accepted_values:
+                values: ['success', 'fail']
+        - name: payment_method
+          description: method used for payment
+          data_tests:
+            - accepted_values:
+                values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']
+        - name: amount
+          description: total amount paid
+          data_tests:
+            - not_null
+        - name: created_at
+          description: timestamp when the payment was created
+          data_tests:
+            - not_null
+          
+                   
+        
