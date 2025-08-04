@@ -25,6 +25,17 @@ This project follows a modular approach based on **staging → marts** modeling 
 
 ---
 
+## 🗺️ Lineage DAG Overview
+
+Below is a visual representation of the data flow across staging and marts layers:
+
+![Lineage DAG](images/lineageDAG.png)
+
+> _This diagram illustrates the model dependencies and helps stakeholders understand how raw data is transformed into meaningful insights._
+
+
+---
+
 ## 📊 Key Models
 
 ### `stg_jaffle_shop_customers`, `stg_jaffle_shop_orders`, `stg_stripe_payments`
@@ -49,6 +60,7 @@ This project follows a modular approach based on **staging → marts** modeling 
 dbt includes automated testing of:
 
 - Primary key constraints (`unique`, `not_null`)
+- Accepted Values
 - Relationships between models
 
 ---
